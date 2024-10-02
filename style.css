@@ -16,7 +16,7 @@ body {
  }
 
 .topmenu {
-  color: lightgray;
+  color: white;
   margin: 10px;
   padding: 20px;
   font-size: 20px;
@@ -37,7 +37,7 @@ body {
 .profile_name {
   float: left;
   padding-left: 2cm;
-  color: lightblue;
+  color: white;
   font-size: 30px;
 }
 
@@ -62,7 +62,7 @@ h2 {
   font-size: 50px;
   text-align: center;
   float: left;
-  color: #7600bc;
+  color: #4169e1;
   margin: 30px;
   margin-left: 60px;
   margin-top: 40px;
@@ -96,7 +96,7 @@ h2 {
 #about-me h1 {
   font-size: 65px;
   margin-top: 90px;
-  color: #7600bc;
+  color: #4169e1;
 }
 
 #about-me p {
@@ -214,7 +214,7 @@ h2 {
 }
 
 .recommendation span {
-  color: #7600bc;
+  color: #4169e1;
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -225,7 +225,7 @@ h2 {
   width: 48px;
   height: 48px;
   border-radius: 100%;
-  background-color: #7600bc;
+  background-color: #4169e1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,8 +270,8 @@ h2 {
 
 .popup button:hover {
   background-color: #fff;
-  border: 2px solid #7600bc;
-  color: #7600bc;
+  border: 2px solid #4169e1;
+  color: #4169e1;
   display: block;
   font-weight: bolder;
   text-align: center;
@@ -302,8 +302,8 @@ fieldset {
 
 button {
   background-color: #fff;
-  border: 1px solid #7600bc;
-  color: #7600bc;
+  border: 1px solid #4169e1;
+  color: #4169e1;
   display: block;
   border-radius: 6px;
   text-align: center;
@@ -314,8 +314,8 @@ button {
 }
 
 button:hover {
-  background-color: #7600bc;
-  border: 1px solid #7600bc;
+  background-color: #4169e1;
+  border: 1px solid #4169e1;
   color: #fff;
   display: block;
   border-radius: 6px;
