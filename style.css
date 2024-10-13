@@ -339,7 +339,7 @@ button:hover {
 /* Position the image container (needed to position the left and right arrows) */
 #writing-samples .container {
   display: block;
-  max-width: 800px; /* or any value that works */
+  max-width: 1000px; /* or any value that works */
 }
 
 /* Hide the images by default */
