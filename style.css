@@ -4,6 +4,12 @@ body {
 
 /* Navigation Bar */
 
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 #home {
   background-color:  #4169e1;
   padding-bottom: 1cm;
