@@ -338,7 +338,9 @@ button:hover {
 
 /* Position the image container (needed to position the left and right arrows) */
 #writing-samples .container {
+  position: relative;
   display: block;
+  margin: 0 auto;
   max-width: 1000px; /* or any value that works */
 }
 
@@ -352,7 +354,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* Next & previous buttons */
 /* Next & previous buttons */
 .prev,
 .next {
