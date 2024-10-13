@@ -344,6 +344,10 @@ button:hover {
   max-width: 1000px; /* or any value that works */
 }
 
+#writing-samples h2 {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
 /* Hide the images by default */
 .mySlides {
   display: none;
