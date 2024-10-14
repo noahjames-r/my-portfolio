@@ -401,7 +401,87 @@
           </div>
         </div>
       </div>
+      // testing shuffle
+      const allImages = Array.from({ length: 50 }, (_, i) => `img${i + 1}.jpg`); // Array of image filenames
+let shuffledImages = shuffleArray(allImages).slice(0, 6); // Shuffle and take first 6 images
+
+// Shuffle function (Fisher-Yates Shuffle Algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Create the gallery
+function createGallery(images) {
+    const slideshowContainer = document.getElementById('slideshow-container');
+    const thumbnailRow = document.getElementById('thumbnail-row');
+    
+    images.forEach((image, index) => {
+        // Create slideshow image element
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'mySlides';
+        slideDiv.style.display = index === 0 ? 'block' : 'none'; // Show first image by default
+        
+        const imgElement = document.createElement('img');
+        imgElement.src = image;
+        imgElement.style.width = '100%';
+        slideDiv.appendChild(imgElement);
+        slideshowContainer.appendChild(slideDiv);
+        
+        // Create thumbnail element
+        const thumbnailDiv = document.createElement('div');
+        thumbnailDiv.className = 'column';
+        
+        const thumbElement = document.createElement('img');
+        thumbElement.className = 'demo';
+        thumbElement.src = image;
+        thumbElement.style.width = '100%';
+        thumbElement.alt = `Caption ${index + 1}`;
+        thumbElement.onclick = () => currentSlide(index + 1);
+        
+        thumbnailDiv.appendChild(thumbElement);
+        thumbnailRow.appendChild(thumbnailDiv);
+    });
+}
+
+// Initialize the gallery
+createGallery(shuffledImages);
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
   
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+  
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+  
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+}
+    // end test
       <script>
       let slideIndex = 1;
       showSlides(slideIndex);
