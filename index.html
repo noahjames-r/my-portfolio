@@ -1,51 +1,238 @@
-Noah Ramirez
-About
-Experience
-Skills
-Writing Samples
-Contact
-Noah Ramirez
-Noah Ramirez
-I write, localize, and market content for a living — and genuinely love the work of finding the right words, in any language, to make an idea land.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noah Ramirez — Content, Localization &amp; Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EFEAE3;
+    --surface:#FBF9F4;
+    --ink:#211F1A;
+    --ink-soft:#524E45;
+    --accent:#2B5D58;
+    --accent-warm:#B98A34;
+    --line:rgba(33,31,26,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    margin:0 0 .4em;
+    letter-spacing:-0.01em;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  header{
+    position:sticky;top:0;
+    background:rgba(239,234,227,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    z-index:10;
+  }
+  .nav-inner{
+    max-width:760px;margin:0 auto;padding:16px 24px;
+    display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+  }
+  .wordmark{font-family:'Fraunces',serif;font-size:1.1rem;}
+  nav{display:flex;gap:20px;flex-wrap:wrap;}
+  nav a{color:var(--ink);text-decoration:none;font-size:.92rem;}
+  nav a:hover{color:var(--accent);}
 
-My name is Noah Ramirez, and I have a passion for writing, localizing, and marketing content. I truly enjoy the simple beauty of finding the right words — often the simplest ones — to describe something, be it an idea, a product, a movie synopsis, the feeling you get when a song inspires you, or the joy of giving advice, support, or consolation to someone in need. This passion was awakened when I began working on a "metadata project" at a digital marketing agency in Santiago, Chile. As part of the job, I had to read the plots and production notes of movies and television series, identify the most meaningful parts of that information, and condense and convey them to viewers. That was already a fantastic experience and job, but it became even better thanks to the second phase of work: localizing it for global audiences. Sitting at the crossroads between cultures gave me profound insight into how people around the world not only consume content, but how they can be sold on it — and, hopefully, fall in love with it.
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
 
-When I am not working to connect people and ideas or striving to get the most out of content (as well as the people and technologies that bring it to life), I enjoy running, playing soccer on the weekend, reading, shanking golf balls, badly managing fantasy football teams, e-learning and practicing coding, binge-listening true crime podcasts, and spending time with my beautiful family.
+  .hero{padding-top:48px;}
+  .hero-photo{
+    width:120px;height:120px;border-radius:50%;
+    object-fit:cover;border:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .hero h1{font-size:2.1rem;}
+  .tagline{color:var(--ink-soft);font-size:1.05rem;max-width:56ch;}
 
-Email
-LinkedIn
-Substack
-Experience
-International Content Coordinator
-The person who makes multilingual content projects "go." I bring new content projects to life and ensure operational success once they're implemented — developing workflows, establishing writing and editing processes and standards, managing and analyzing content-metrics data, and handling client communications.
+  .contact-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;font-size:.92rem;}
+  .contact-links a{
+    text-decoration:none;color:var(--ink);
+    border-bottom:1px solid var(--accent-warm);
+    padding-bottom:1px;
+  }
 
-Style Editor
-As an editor and advisor, I guide a team of multilingual copywriters, translators, and journalists to ensure every piece of content is prepared with style, tone, accuracy, and the target audience in mind — staying current on terminology and SEO writing, and drafting and maintaining style guides.
+  .role{padding:20px 0;border-top:1px solid var(--line);}
+  .role:first-of-type{border-top:none;}
+  .role h3{font-size:1.15rem;margin-bottom:.3em;}
+  .role p{color:var(--ink-soft);margin:0;}
 
-Marketing QA Specialist
-Dotting the i's and crossing the t's on digital marketing campaigns from inception to delivery — shaping the message on the creative side, then making sure it and all supporting assets (images, videos, links, calendars) arrive functional and fully optimized for their delivery method.
+  .skills-list{display:flex;flex-direction:column;gap:0;}
+  .skill-row{
+    display:flex;align-items:center;gap:16px;
+    padding:14px 0;border-top:1px solid var(--line);
+  }
+  .skill-row:first-child{border-top:none;}
+  .skill-row img{width:36px;height:36px;object-fit:cover;border-radius:6px;flex-shrink:0;}
+  .skill-name{font-weight:500;}
+  .skill-years{margin-left:auto;color:var(--ink-soft);font-size:.9rem;}
 
-Skills
+  .samples-note{color:var(--ink-soft);font-size:.92rem;margin-bottom:20px;max-width:60ch;}
+  .samples-strip{
+    display:flex;gap:12px;overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:12px;
+    margin:0 -24px;padding-left:24px;padding-right:24px;
+  }
+  .samples-strip img{
+    height:220px;flex-shrink:0;scroll-snap-align:start;
+    border-radius:4px;border:1px solid var(--line);
+    background:var(--surface);
+  }
 
-Content Creation
-8 years
+  footer{padding:40px 0 60px;text-align:left;color:var(--ink-soft);font-size:.9rem;}
+</style>
+</head>
+<body>
 
-Localization
-8 years
+<header>
+  <div class="nav-inner">
+    <span class="wordmark">Noah Ramirez</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#writing">Writing Samples</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-AP Journalism
-2 years
+<main class="wrap">
 
-Digital Marketing
-1 year
-Writing Samples
-A selection of synopses and copy written and localized for streaming platforms. Scroll to browse — captions and a more curated selection are coming soon.
+  <section class="hero" id="about">
+    <img class="hero-photo" src="html_finalprojimages/GitHub portfolio pic.JPG" alt="Noah Ramirez">
+    <h1>Noah Ramirez</h1>
+    <p class="tagline">I write, localize, and market content for a living — and genuinely love the work of finding the right words, in any language, to make an idea land.</p>
+    <p>My name is Noah Ramirez, and I have a passion for writing, localizing, and marketing content. I truly enjoy the simple beauty of finding the right words — often the simplest ones — to describe something, be it an idea, a product, a movie synopsis, the feeling you get when a song inspires you, or the joy of giving advice, support, or consolation to someone in need. This passion was awakened when I began working on a "metadata project" at a digital marketing agency in Santiago, Chile. As part of the job, I had to read the plots and production notes of movies and television series, identify the most meaningful parts of that information, and condense and convey them to viewers. That was already a fantastic experience and job, but it became even better thanks to the second phase of work: localizing it for global audiences. Sitting at the crossroads between cultures gave me profound insight into how people around the world not only consume content, but how they can be sold on it — and, hopefully, fall in love with it.</p>
+    <p>When I am not working to connect people and ideas or striving to get the most out of content (as well as the people and technologies that bring it to life), I enjoy running, playing soccer on the weekend, reading, shanking golf balls, badly managing fantasy football teams, e-learning and practicing coding, binge-listening true crime podcasts, and spending time with my beautiful family.</p>
+    <div class="contact-links">
+      <a href="mailto:njramirez84@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/noah-ramirez-localisation-specialist/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@noahjramirez" target="_blank" rel="noopener">Substack</a>
+    </div>
+  </section>
 
-Writing sample 1 of 43Writing sample 2 of 43Writing sample 3 of 43Writing sample 4 of 43Writing sample 5 of 43Writing sample 6 of 43Writing sample 7 of 43Writing sample 8 of 43Writing sample 9 of 43Writing sample 10 of 43Writing sample 11 of 43Writing sample 12 of 43Writing sample 13 of 43Writing sample 14 of 43Writing sample 15 of 43Writing sample 16 of 43Writing sample 17 of 43Writing sample 18 of 43Writing sample 19 of 43Writing sample 20 of 43Writing sample 21 of 43Writing sample 22 of 43Writing sample 23 of 43Writing sample 24 of 43Writing sample 25 of 43Writing sample 26 of 43Writing sample 27 of 43Writing sample 28 of 43Writing sample 29 of 43Writing sample 30 of 43Writing sample 31 of 43Writing sample 32 of 43Writing sample 33 of 43Writing sample 34 of 43Writing sample 35 of 43Writing sample 36 of 43Writing sample 37 of 43Writing sample 38 of 43Writing sample 39 of 43Writing sample 40 of 43Writing sample 41 of 43Writing sample 42 of 43Writing sample 43 of 43
-Let's talk
-Open to roles in content, localization, editing, and marketing. The fastest way to reach me is email.
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="role">
+      <h3>International Content Coordinator</h3>
+      <p>The person who makes multilingual content projects "go." I bring new content projects to life and ensure operational success once they're implemented — developing workflows, establishing writing and editing processes and standards, managing and analyzing content-metrics data, and handling client communications.</p>
+    </div>
+    <div class="role">
+      <h3>Style Editor</h3>
+      <p>As an editor and advisor, I guide a team of multilingual copywriters, translators, and journalists to ensure every piece of content is prepared with style, tone, accuracy, and the target audience in mind — staying current on terminology and SEO writing, and drafting and maintaining style guides.</p>
+    </div>
+    <div class="role">
+      <h3>Marketing QA Specialist</h3>
+      <p>Dotting the i's and crossing the t's on digital marketing campaigns from inception to delivery — shaping the message on the creative side, then making sure it and all supporting assets (images, videos, links, calendars) arrive functional and fully optimized for their delivery method.</p>
+    </div>
+  </section>
 
-njramirez84@gmail.com
-LinkedIn
-Substack
-© 2026 Noah Ramirez
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill-row">
+        <img src="html_finalprojimages/Content.jpg" alt="">
+        <span class="skill-name">Content Creation</span>
+        <span class="skill-years">8 years</span>
+      </div>
+      <div class="skill-row">
+        <img src="html_finalprojimages/Translation.jpg" alt="">
+        <span class="skill-name">Localization</span>
+        <span class="skill-years">8 years</span>
+      </div>
+      <div class="skill-row">
+        <img src="html_finalprojimages/Ap style.jpg" alt="">
+        <span class="skill-name">AP Journalism</span>
+        <span class="skill-years">2 years</span>
+      </div>
+      <div class="skill-row">
+        <img src="html_finalprojimages/Marketing.jpg" alt="">
+        <span class="skill-name">Digital Marketing</span>
+        <span class="skill-years">1 year</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Writing Samples</h2>
+    <p class="samples-note">A selection of synopses and copy written and localized for streaming platforms. Scroll to browse — captions and a more curated selection are coming soon.</p>
+    <div class="samples-strip">
+      <img src="html_finalprojimages/30 noches con mi ex.jpg" alt="Writing sample 1 of 43">
+      <img src="html_finalprojimages/Amor de película synopsis.jpg" alt="Writing sample 2 of 43">
+      <img src="html_finalprojimages/Argentina 2001 synopsis.jpg" alt="Writing sample 3 of 43">
+      <img src="html_finalprojimages/Asfixiados synopsis.jpg" alt="Writing sample 4 of 43">
+      <img src="html_finalprojimages/Beplaying synopsis.jpg" alt="Writing sample 5 of 43">
+      <img src="html_finalprojimages/Cobra synopsis.jpg" alt="Writing sample 6 of 43">
+      <img src="html_finalprojimages/A tale of two sisters synopsis.jpg" alt="Writing sample 7 of 43">
+      <img src="html_finalprojimages/Dos más dos synopsis.jpg" alt="Writing sample 8 of 43">
+      <img src="html_finalprojimages/El asistente synopsis.jpg" alt="Writing sample 9 of 43">
+      <img src="html_finalprojimages/El buen patrón synopsis.jpg" alt="Writing sample 10 of 43">
+      <img src="html_finalprojimages/El cuento de las comadrejas synopsis.jpg" alt="Writing sample 11 of 43">
+      <img src="html_finalprojimages/El duelo synopsis.jpg" alt="Writing sample 12 of 43">
+      <img src="html_finalprojimages/Empieza el baile synopsis.jpg" alt="Writing sample 13 of 43">
+      <img src="html_finalprojimages/Hay algo en el bosque synopsis.jpg" alt="Writing sample 14 of 43">
+      <img src="html_finalprojimages/How to be a carioca synosis.jpg" alt="Writing sample 15 of 43">
+      <img src="html_finalprojimages/La boda de rosa synopsis.jpg" alt="Writing sample 16 of 43">
+      <img src="html_finalprojimages/La exorcista synopsis.jpg" alt="Writing sample 17 of 43">
+      <img src="html_finalprojimages/La maldición del guapo synopsis.jpg" alt="Writing sample 18 of 43">
+      <img src="html_finalprojimages/La panelista synopsis.jpg" alt="Writing sample 19 of 43">
+      <img src="html_finalprojimages/Las fiestas synopsis.jpg" alt="Writing sample 20 of 43">
+      <img src="html_finalprojimages/Likes for sale synopsis.jpg" alt="Writing sample 21 of 43">
+      <img src="html_finalprojimages/Los que aman odian synopsis.jpg" alt="Writing sample 22 of 43">
+      <img src="html_finalprojimages/Malos padres synopsis.jpg" alt="Writing sample 23 of 43">
+      <img src="html_finalprojimages/Me he hecho viral synopsis.jpg" alt="Writing sample 24 of 43">
+      <img src="html_finalprojimages/MotoGP unlimited synopsis.jpg" alt="Writing sample 25 of 43">
+      <img src="html_finalprojimages/Muchachos la película de la gente synopsis.jpg" alt="Writing sample 26 of 43">
+      <img src="html_finalprojimages/Más respeto que soy tu madre synopsis.jpg" alt="Writing sample 27 of 43">
+      <img src="html_finalprojimages/Nasdrovia synopsis.jpg" alt="Writing sample 28 of 43">
+      <img src="html_finalprojimages/Nosso lar synopsis.jpg" alt="Writing sample 29 of 43">
+      <img src="html_finalprojimages/Nothing synopsis.jpg" alt="Writing sample 30 of 43">
+      <img src="html_finalprojimages/O sequestro do voo 375.jpg" alt="Writing sample 31 of 43">
+      <img src="html_finalprojimages/Objetos synopsis.jpg" alt="Writing sample 32 of 43">
+      <img src="html_finalprojimages/Official competition synopsis.jpg" alt="Writing sample 33 of 43">
+      <img src="html_finalprojimages/Peace peace now now synopsis.jpg" alt="Writing sample 34 of 43">
+      <img src="html_finalprojimages/Rioja la tierra de los mil vinos synopsis.jpg" alt="Writing sample 35 of 43">
+      <img src="html_finalprojimages/Sentimental synopsis.jpg" alt="Writing sample 36 of 43">
+      <img src="html_finalprojimages/The Boss synopsis.jpg" alt="Writing sample 37 of 43">
+      <img src="html_finalprojimages/The heist of the century synopsis.jpg" alt="Writing sample 38 of 43">
+      <img src="html_finalprojimages/The king of TV synopsis.jpg" alt="Writing sample 39 of 43">
+      <img src="html_finalprojimages/The stolen cup synopsis.jpg" alt="Writing sample 40 of 43">
+      <img src="html_finalprojimages/Vidente por accidente synopsis.jpg" alt="Writing sample 41 of 43">
+      <img src="html_finalprojimages/Welcome al norte synopsis.jpg" alt="Writing sample 42 of 43">
+      <img src="html_finalprojimages/Santa Evita synopsis.jpg" alt="Writing sample 43 of 43">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's talk</h2>
+    <p>Open to roles in content, localization, editing, and marketing. The fastest way to reach me is email.</p>
+    <div class="contact-links">
+      <a href="mailto:njramirez84@gmail.com">njramirez84@gmail.com</a>
+      <a href="https://www.linkedin.com/in/noah-ramirez-localisation-specialist/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@noahjramirez" target="_blank" rel="noopener">Substack</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Noah Ramirez</footer>
+</main>
+
+</body>
+</html>
