@@ -84,17 +84,45 @@
   .skill-years{margin-left:auto;color:var(--ink-soft);font-size:.9rem;}
 
   .samples-note{color:var(--ink-soft);font-size:.92rem;margin-bottom:20px;max-width:60ch;}
-  .samples-strip{
-    display:flex;gap:12px;overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding-bottom:12px;
-    margin:0 -24px;padding-left:24px;padding-right:24px;
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .filters button{
+    font:inherit;font-size:.88rem;cursor:pointer;
+    background:transparent;color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;
   }
-  .samples-strip img{
-    height:220px;flex-shrink:0;scroll-snap-align:start;
+  .filters button:hover{border-color:var(--accent);}
+  .filters button.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .samples-grid{
+    display:grid;gap:12px;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  }
+  .samples-grid img{
+    width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top left;
     border-radius:4px;border:1px solid var(--line);
-    background:var(--surface);
+    background:var(--surface);cursor:zoom-in;
+    transition:transform .15s ease;
   }
+  .samples-grid img:hover{transform:translateY(-2px);}
+  .samples-grid img.hidden{display:none;}
+
+  .lightbox{
+    position:fixed;inset:0;background:rgba(20,18,14,.92);
+    display:none;flex-direction:column;align-items:center;justify-content:center;
+    z-index:100;padding:24px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:92vw;max-height:80vh;border-radius:4px;background:#fff;}
+  .lb-caption{color:#fff;margin-top:14px;font-size:.95rem;text-align:center;}
+  .lb-caption small{display:block;color:rgba(255,255,255,.65);margin-top:2px;}
+  .lb-btn{
+    position:absolute;background:rgba(255,255,255,.12);color:#fff;border:none;
+    width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.25);}
+  .lb-prev{left:16px;top:50%;transform:translateY(-50%);}
+  .lb-next{right:16px;top:50%;transform:translateY(-50%);}
+  .lb-close{top:16px;right:16px;}
 
   footer{padding:40px 0 60px;text-align:left;color:var(--ink-soft);font-size:.9rem;}
 </style>
@@ -173,8 +201,9 @@
 
   <section id="writing">
     <h2>Writing Samples</h2>
-    <p class="samples-note">A selection of synopses and copy written and localized for streaming platforms. Scroll to browse — captions and a more curated selection are coming soon.</p>
-    <div class="samples-strip">
+    <p class="samples-note">A selection of synopses and copy written and localized for streaming platforms. Filter by type, then click any sample to read it full-size.</p>
+    <div class="filters" id="filters"></div>
+    <div class="samples-grid" id="samples">
       <img src="html_finalprojimages/30 noches con mi ex.jpg" alt="Writing sample 1 of 43">
       <img src="html_finalprojimages/Amor de película synopsis.jpg" alt="Writing sample 2 of 43">
       <img src="html_finalprojimages/Argentina 2001 synopsis.jpg" alt="Writing sample 3 of 43">
@@ -233,6 +262,91 @@
 
   <footer>© 2026 Noah Ramirez</footer>
 </main>
+
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script>
+  // ---- EDIT CATEGORIES HERE ----
+  // Anything not listed below is automatically placed in "Films".
+  // To move a sample, add its title (the file name without "synopsis" and ".jpg") to a list.
+  const CATEGORIES = {
+    "Series": ["Santa Evita", "Los que aman odian", "Empieza el baile"],
+    "Sports & Documentaries": ["MotoGP unlimited", "Rioja la tierra de los mil vinos", "Muchachos la película de la gente", "Argentina 2001", "The stolen cup"]
+  };
+  const DEFAULT_CATEGORY = "Films";
+  // ------------------------------
+
+  const imgs = Array.from(document.querySelectorAll('#samples img'));
+  const filtersEl = document.getElementById('filters');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  let visible = [], current = 0;
+
+  function titleFrom(src){
+    let name = decodeURIComponent(src.split('/').pop()).replace(/\.[^.]+$/, '');
+    return name.replace(/\s+syno?p?sis$/i, '').trim();
+  }
+  function categoryOf(title){
+    for (const [cat, list] of Object.entries(CATEGORIES)){
+      if (list.some(t => t.toLowerCase() === title.toLowerCase())) return cat;
+    }
+    return DEFAULT_CATEGORY;
+  }
+
+  imgs.forEach(img => {
+    const title = titleFrom(img.getAttribute('src'));
+    img.dataset.title = title;
+    img.dataset.cat = categoryOf(title);
+    img.alt = title + ' (writing sample)';
+    img.loading = 'lazy';
+  });
+
+  const cats = ['All', ...new Set(imgs.map(i => i.dataset.cat))];
+  cats.forEach((cat, i) => {
+    const b = document.createElement('button');
+    b.textContent = cat;
+    if (i === 0) b.classList.add('active');
+    b.addEventListener('click', () => {
+      filtersEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      imgs.forEach(img => img.classList.toggle('hidden', cat !== 'All' && img.dataset.cat !== cat));
+    });
+    filtersEl.appendChild(b);
+  });
+
+  function show(i){
+    current = (i + visible.length) % visible.length;
+    const img = visible[current];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.innerHTML = img.dataset.title + '<small>' + img.dataset.cat + ' &middot; ' + (current + 1) + ' of ' + visible.length + '</small>';
+  }
+  function open(img){
+    visible = imgs.filter(i => !i.classList.contains('hidden'));
+    lb.classList.add('open');
+    show(visible.indexOf(img));
+  }
+  function close(){ lb.classList.remove('open'); }
+
+  imgs.forEach(img => img.addEventListener('click', () => open(img)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+</script>
 
 </body>
 </html>
