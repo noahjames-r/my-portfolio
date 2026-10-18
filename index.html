@@ -84,27 +84,26 @@
   .skill-years{margin-left:auto;color:var(--ink-soft);font-size:.9rem;}
 
   .samples-note{color:var(--ink-soft);font-size:.92rem;margin-bottom:20px;max-width:60ch;}
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
-  .filters button{
-    font:inherit;font-size:.88rem;cursor:pointer;
-    background:transparent;color:var(--ink);
-    border:1px solid var(--line);border-radius:999px;
-    padding:6px 14px;
+  .section-intro p{color:var(--ink-soft);max-width:62ch;margin:0 0 1em;}
+  .samples-note{color:var(--ink);font-weight:500;font-size:.95rem;margin:28px 0 14px;}
+  .cards{
+    display:grid;gap:16px;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   }
-  .filters button:hover{border-color:var(--accent);}
-  .filters button.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-  .samples-grid{
-    display:grid;gap:12px;
-    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  .card{
+    font:inherit;text-align:left;cursor:pointer;color:var(--ink);
+    background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:0;overflow:hidden;
+    transition:border-color .15s ease,transform .15s ease;
   }
-  .samples-grid img{
-    width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top left;
-    border-radius:4px;border:1px solid var(--line);
-    background:var(--surface);cursor:zoom-in;
-    transition:transform .15s ease;
+  .card:hover,.card:focus-visible{border-color:var(--accent);transform:translateY(-2px);}
+  .card img{
+    display:block;width:100%;height:120px;object-fit:cover;object-position:top left;
+    opacity:.85;border-bottom:1px solid var(--line);
   }
-  .samples-grid img:hover{transform:translateY(-2px);}
-  .samples-grid img.hidden{display:none;}
+  .card-body{padding:14px 16px 16px;}
+  .card-title{font-family:'Fraunces',serif;font-size:1.1rem;display:block;}
+  .card-count{color:var(--ink-soft);font-size:.88rem;}
 
   .lightbox{
     position:fixed;inset:0;background:rgba(20,18,14,.92);
@@ -136,7 +135,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
-      <a href="#writing">Writing Samples</a>
+      <a href="#writing">Synopses</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -194,94 +193,23 @@
       <div class="skill-row">
         <img src="html_finalprojimages/Marketing.jpg" alt="">
         <span class="skill-name">Digital Marketing</span>
-        <span class="skill-years">1 year</span>
+        <span class="skill-years">2 years</span>
+      </div>
+      <div class="skill-row">
+        <img src="html_finalprojimages/Writer.jpg" alt="">
+        <span class="skill-name">Editing &amp; Style Guides</span>
       </div>
     </div>
   </section>
 
   <section id="writing">
-    <h2>Writing Samples</h2>
-    <p class="samples-note">A selection of synopses and copy written and localized for streaming platforms. Filter by type, then click any sample to read it full-size.</p>
-    <div class="filters" id="filters"></div>
-    <div class="samples-grid" id="samples">
-      <img src="html_finalprojimages/30 noches con mi ex.jpg" alt="Writing sample 1 of 43">
-      <img src="html_finalprojimages/Amor de película synopsis.jpg" alt="Writing sample 2 of 43">
-      <img src="html_finalprojimages/Argentina 2001 synopsis.jpg" alt="Writing sample 3 of 43">
-      <img src="html_finalprojimages/Asfixiados synopsis.jpg" alt="Writing sample 4 of 43">
-      <img src="html_finalprojimages/Beplaying synopsis.jpg" alt="Writing sample 5 of 43">
-      <img src="html_finalprojimages/Cobra synopsis.jpg" alt="Writing sample 6 of 43">
-      <img src="html_finalprojimages/A tale of two sisters synopsis.jpg" alt="Writing sample 7 of 43">
-      <img src="html_finalprojimages/Dos más dos synopsis.jpg" alt="Writing sample 8 of 43">
-      <img src="html_finalprojimages/El asistente synopsis.jpg" alt="Writing sample 9 of 43">
-      <img src="html_finalprojimages/El buen patrón synopsis.jpg" alt="Writing sample 10 of 43">
-      <img src="html_finalprojimages/El cuento de las comadrejas synopsis.jpg" alt="Writing sample 11 of 43">
-      <img src="html_finalprojimages/El duelo synopsis.jpg" alt="Writing sample 12 of 43">
-      <img src="html_finalprojimages/Empieza el baile synopsis.jpg" alt="Writing sample 13 of 43">
-      <img src="html_finalprojimages/Hay algo en el bosque synopsis.jpg" alt="Writing sample 14 of 43">
-      <img src="html_finalprojimages/How to be a carioca synosis.jpg" alt="Writing sample 15 of 43">
-      <img src="html_finalprojimages/La boda de rosa synopsis.jpg" alt="Writing sample 16 of 43">
-      <img src="html_finalprojimages/La exorcista synopsis.jpg" alt="Writing sample 17 of 43">
-      <img src="html_finalprojimages/La maldición del guapo synopsis.jpg" alt="Writing sample 18 of 43">
-      <img src="html_finalprojimages/La panelista synopsis.jpg" alt="Writing sample 19 of 43">
-      <img src="html_finalprojimages/Las fiestas synopsis.jpg" alt="Writing sample 20 of 43">
-      <img src="html_finalprojimages/Likes for sale synopsis.jpg" alt="Writing sample 21 of 43">
-      <img src="html_finalprojimages/Los que aman odian synopsis.jpg" alt="Writing sample 22 of 43">
-      <img src="html_finalprojimages/Malos padres synopsis.jpg" alt="Writing sample 23 of 43">
-      <img src="html_finalprojimages/Me he hecho viral synopsis.jpg" alt="Writing sample 24 of 43">
-      <img src="html_finalprojimages/MotoGP unlimited synopsis.jpg" alt="Writing sample 25 of 43">
-      <img src="html_finalprojimages/Muchachos la película de la gente synopsis.jpg" alt="Writing sample 26 of 43">
-      <img src="html_finalprojimages/Más respeto que soy tu madre synopsis.jpg" alt="Writing sample 27 of 43">
-      <img src="html_finalprojimages/Nasdrovia synopsis.jpg" alt="Writing sample 28 of 43">
-      <img src="html_finalprojimages/Nosso lar synopsis.jpg" alt="Writing sample 29 of 43">
-      <img src="html_finalprojimages/Nothing synopsis.jpg" alt="Writing sample 30 of 43">
-      <img src="html_finalprojimages/O sequestro do voo 375.jpg" alt="Writing sample 31 of 43">
-      <img src="html_finalprojimages/Objetos synopsis.jpg" alt="Writing sample 32 of 43">
-      <img src="html_finalprojimages/Official competition synopsis.jpg" alt="Writing sample 33 of 43">
-      <img src="html_finalprojimages/Peace peace now now synopsis.jpg" alt="Writing sample 34 of 43">
-      <img src="html_finalprojimages/Rioja la tierra de los mil vinos synopsis.jpg" alt="Writing sample 35 of 43">
-      <img src="html_finalprojimages/Sentimental synopsis.jpg" alt="Writing sample 36 of 43">
-      <img src="html_finalprojimages/El encargado synopsis.png" alt="Writing sample 37 of 43">
-      <img src="html_finalprojimages/The heist of the century synopsis.jpg" alt="Writing sample 38 of 43">
-      <img src="html_finalprojimages/The king of TV synopsis.jpg" alt="Writing sample 39 of 43">
-      <img src="html_finalprojimages/The stolen cup synopsis.jpg" alt="Writing sample 40 of 43">
-      <img src="html_finalprojimages/Vidente por accidente synopsis.jpg" alt="Writing sample 41 of 43">
-      <img src="html_finalprojimages/Welcome al norte synopsis.jpg" alt="Writing sample 42 of 43">
-      <img src="html_finalprojimages/Santa Evita synopsis.jpg" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El retiro synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Sangre blanca synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Carancho synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Madraza synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Sin rodeos synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/4X4 synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Conversaciones sobre el odio synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Terapia alternativa synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Casi leyendas synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Não Tem Volta synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El clan synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Nueve reinas synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Nosso Lar 2: Os Mensageiros synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El año del tigre synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Recreo synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Una noche de amor synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Planners synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Ringo, gloria y muerte synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El comandante Fort synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Alemão 2 synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Franklin, historia de un billete synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Sin hijos synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Las grietas de jara synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El método Tangalanga synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Pancho Villa: El Centauro del Norte synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Cohen vs. Rosi synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Virus-32 synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Ustedes deciden synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Igualita a mí synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/La odisea de los giles synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/Noche americana synopsis.png" alt="Writing sample 43 of 43">
-      <img src="html_finalprojimages/El hijo de la novia synopsis.png" alt="Writing sample 43 of 43">
-      
-      
+    <h2>Synopsis Writing &amp; Localization</h2>
+    <div class="section-intro">
+      <p>The metadata project I worked on centered on descriptive content, and it was there that I was tasked with marketing movies and series, mainly from Latin America and Spain. The objective was simple: craft short synopses that lure in potential viewers.</p>
+      <p>Because the productions came from countries like Argentina, Brazil, and Mexico, I found myself watching countless trailers, researching directors and actors, and obsessing over Spanish and Portuguese words. I realized that words rarely translate one-to-one. Buried within sentences are layers of nuance, culture, and context, and the job of a translator (and, in this case, a copywriter) is to extract the ideas, buzzwords, characters, drama, and hooks and assemble them into the catchiest possible version of the story.</p>
     </div>
+    <p class="samples-note">Choose a genre to read the synopses as they appeared on the streaming platform.</p>
+    <div class="cards" id="cards"></div>
   </section>
 
   <section id="contact">
@@ -306,70 +234,122 @@
 </div>
 
 <script>
-  // ---- EDIT CATEGORIES HERE ----
-  // Anything not listed below is automatically placed in "Films".
-  // To move a sample, add its title (the file name without "synopsis" and ".jpg") to a list.
-  const CATEGORIES = {
-    "Series": ["Santa Evita", "Los que aman odian", "Empieza el baile"],
-    "Sports & Documentaries": ["MotoGP unlimited", "Rioja la tierra de los mil vinos", "Muchachos la película de la gente", "Argentina 2001", "The stolen cup"]
-  };
-  const DEFAULT_CATEGORY = "Films";
-  // ------------------------------
+  // ---- YOUR SAMPLES: [title, genre, content type, country, image file] ----
+  // To add a sample: upload the image to html_finalprojimages, then add one line here.
+  const SAMPLES = [
+    ["30 noches con mi ex", "Comedy", "Movie", "Argentina", "30 noches con mi ex.jpg"],
+    ["Amor de película", "Romcom", "Movie", "Argentina", "Amor de película synopsis.jpg"],
+    ["Argentina 2001", "Drama", "Series", "Argentina", "Argentina 2001 synopsis.jpg"],
+    ["Asfixiados", "Drama", "Movie", "Argentina", "Asfixiados synopsis.jpg"],
+    ["Beplaying: The voice behind the sound", "Documentary", "Series", "Argentina", "Beplaying synopsis.jpg"],
+    ["Cobra", "Drama", "Series", "UK", "Cobra synopsis.jpg"],
+    ["A Tale of Two Sisters", "Horror", "Movie", "Korea", "A tale of two sisters synopsis.jpg"],
+    ["Dos más dos", "Comedy", "Movie", "Mexico", "Dos más dos synopsis.jpg"],
+    ["El asistente", "Comedy", "Movie", "Argentina", "El asistente synopsis.jpg"],
+    ["El buen patrón", "Comedy", "Movie", "Spain", "El buen patrón synopsis.jpg"],
+    ["El cuento de las comadrejas", "Comedy", "Movie", "Argentina", "El cuento de las comadrejas synopsis.jpg"],
+    ["El duelo", "Romcom", "Movie", "Argentina", "El duelo synopsis.jpg"],
+    ["Empieza el baile", "Drama", "Movie", "Spain-Argentina", "Empieza el baile synopsis.jpg"],
+    ["Hay algo en el bosque", "Comedy", "Series", "Spain", "Hay algo en el bosque synopsis.jpg"],
+    ["How to be a Carioca", "Comedy", "Series", "Brazil", "How to be a carioca synosis.jpg"],
+    ["La boda de Rosa", "Comedy", "Movie", "Spain", "La boda de rosa synopsis.jpg"],
+    ["Exorcista", "Horror", "Movie", "Mexico", "La exorcista synopsis.jpg"],
+    ["La maldición del guapo", "Comedy", "Movie", "Spain", "La maldición del guapo synopsis.jpg"],
+    ["La panelista", "Drama", "Movie", "Argentina", "La panelista synopsis.jpg"],
+    ["Las fiestas", "Drama", "Movie", "Argentina", "Las fiestas synopsis.jpg"],
+    ["Likes for Sale", "Comedy", "Movie", "Brazil", "Likes for sale synopsis.jpg"],
+    ["Los que aman odian", "Drama", "Movie", "Argentina", "Los que aman odian synopsis.jpg"],
+    ["Malos padres", "Comedy", "Movie", "Dominican Republic", "Malos padres synopsis.jpg"],
+    ["Me he hecho viral", "Comedy", "Movie", "Spain", "Me he hecho viral synopsis.jpg"],
+    ["MotoGP Unlimited", "Sports", "Series", "Spain", "MotoGP unlimited synopsis.jpg"],
+    ["Muchachos: la película de la gente", "Sports", "Movie", "Argentina", "Muchachos la película de la gente synopsis.jpg"],
+    ["Más respeto que soy tu madre", "Comedy", "Movie", "Argentina", "Más respeto que soy tu madre synopsis.jpg"],
+    ["Nasdrovia", "Comedy", "Series", "Spain", "Nasdrovia synopsis.jpg"],
+    ["Nosso Lar", "Drama", "Movie", "Brazil", "Nosso lar synopsis.jpg"],
+    ["Nothing", "Comedy", "Series", "Argentina", "Nothing synopsis.jpg"],
+    ["O sequestro do voo 375", "Drama", "Movie", "Brazil", "O sequestro do voo 375.jpg"],
+    ["Objetos", "Drama", "Movie", "Spain-Argentina", "Objetos synopsis.jpg"],
+    ["Official Competition", "Comedy", "Movie", "Spain", "Official competition synopsis.jpg"],
+    ["Peace Peace Now Now", "Documentary", "Series", "Chile", "Peace peace now now synopsis.jpg"],
+    ["Rioja: la tierra de los mil vinos", "Documentary", "Movie", "Spain", "Rioja la tierra de los mil vinos synopsis.jpg"],
+    ["Sentimental", "Comedy", "Movie", "Spain", "Sentimental synopsis.jpg"],
+    ["El encargado", "Comedy", "Series", "Argentina", "El encargado synopsis.png"],
+    ["The heist of the century", "Drama", "Movie", "Argentina", "The heist of the century synopsis.jpg"],
+    ["The king of TV", "Drama", "Series", "Brazil", "The king of TV synopsis.jpg"],
+    ["The stolen cup", "Comedy", "Series", "Argentina", "The stolen cup synopsis.jpg"],
+    ["Vidente por accidente", "Comedy", "Movie", "Brazil", "Vidente por accidente synopsis.jpg"],
+    ["Welcome al norte", "Comedy", "Movie", "Mexico", "Welcome al norte synopsis.jpg"],
+    ["Santa Evita", "Drama", "Series", "Argentina", "Santa Evita synopsis.jpg"],
+    ["El retiro", "Drama", "Movie", "Argentina", "El retiro synopsis.png"],
+    ["Sangre Blanca", "Crime", "Movie", "Argentina", "Sangre blanca synopsis.png"],
+    ["Carancho", "Crime", "Movie", "Argentina", "Carancho synopsis.png"],
+    ["Madraza", "Comedy", "Movie", "Argentina", "Madraza synopsis.png"],
+    ["Sin rodeos", "Comedy", "Movie", "Argentina", "Sin rodeos synopsis.png"],
+    ["4X4", "Crime", "Movie", "Argentina", "4X4 synopsis.png"],
+    ["Conversaciones sobre el odio", "Drama", "Movie", "Argentina", "Conversaciones sobre el odio synopsis.png"],
+    ["Terapia alternativa", "Comedy", "Series", "Argentina", "Terapia alternativa synopsis.png"],
+    ["Casi leyendas", "Comedy", "Movie", "Argentina", "Casi leyendas synopsis.png"],
+    ["Não Tem Volta", "Romcom", "Movie", "Brazil", "Não Tem Volta synopsis.png"],
+    ["El clan", "Crime", "Movie", "Argentina", "El clan synopsis.png"],
+    ["Nueve reinas", "Crime", "Movie", "Argentina", "Nueve reinas synopsis.png"],
+    ["Nosso Lar 2: Os Mensageiros", "Drama", "Movie", "Brazil", "Nosso Lar 2: Os Mensageiros synopsis.png"],
+    ["El año del tigre", "Comedy", "Movie", "Peru-Dominican Republic", "El año del tigre synopsis.png"],
+    ["Recreo", "Drama", "Movie", "Argentina", "Recreo synopsis.png"],
+    ["Una noche de amor", "Romcom", "Movie", "Argentina", "Una noche de amor synopsis.png"],
+    ["Planners", "Drama", "Series", "Argentina", "Planners synopsis.png"],
+    ["Ringo, gloria y muerte", "Drama", "Series", "Argentina", "Ringo, gloria y muerte synopsis.png"],
+    ["El comandante Fort", "Documentary", "Series", "Argentina", "El comandante Fort synopsis.png"],
+    ["Alemão 2", "Crime", "Movie", "Brazil", "Alemão 2 synopsis.png"],
+    ["Franklin, historia de un billete", "Crime", "Movie", "Argentina", "Franklin, historia de un billete synopsis.png"],
+    ["Sin hijos", "Romcom", "Movie", "Argentina", "Sin hijos synopsis.png"],
+    ["Las grietas de jara", "Drama", "Movie", "Argentina", "Las grietas de jara synopsis.png"],
+    ["El método Tangalanga", "Comedy", "Movie", "Argentina", "El método Tangalanga synopsis.png"],
+    ["Pancho Villa: El Centauro del Norte", "Drama", "Series", "Mexico", "Pancho Villa: El Centauro del Norte synopsis.png"],
+    ["Cohen vs. Rosi", "Comedy", "Movie", "Argentina", "Cohen vs. Rosi synopsis.png"],
+    ["Virus-32", "Horror", "Movie", "Uruguay", "Virus-32 synopsis.png"],
+    ["Ustedes deciden", "Comedy", "Movie", "Argentina", "Ustedes deciden synopsis.png"],
+    ["Igualita a mí", "Comedy", "Movie", "Argentina", "Igualita a mí synopsis.png"],
+    ["La odisea de los giles", "Comedy", "Movie", "Argentina", "La odisea de los giles synopsis.png"],
+    ["Noche americana", "Comedy", "Movie", "Argentina-Uruguay", "Noche americana synopsis.png"],
+    ["El hijo de la novia", "Drama", "Movie", "Argentina", "El hijo de la novia synopsis.png"]
+  ];
+  const IMG_DIR = 'html_finalprojimages/';
+  const LABELS = { "Romcom": "Romantic Comedy" };   // optional nicer names for genres
+  const COVERS = {};                                // optional: { "Comedy": "Title of sample to use as cover" }
+  // ------------------------------------------------------------------------
 
-  const imgs = Array.from(document.querySelectorAll('#samples img'));
-  const filtersEl = document.getElementById('filters');
+  const cardsEl = document.getElementById('cards');
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   const lbCaption = document.getElementById('lbCaption');
-  let visible = [], current = 0;
+  const src = f => IMG_DIR + encodeURIComponent(f);
+  let group = [], current = 0;
 
-  function titleFrom(src){
-    let name = decodeURIComponent(src.split('/').pop()).replace(/\.[^.]+$/, '');
-    return name.replace(/\s+syno?p?sis$/i, '').trim();
-  }
-  function categoryOf(title){
-    for (const [cat, list] of Object.entries(CATEGORIES)){
-      if (list.some(t => t.toLowerCase() === title.toLowerCase())) return cat;
-    }
-    return DEFAULT_CATEGORY;
-  }
+  const groups = {};
+  SAMPLES.forEach(s => (groups[s[1]] = groups[s[1]] || []).push(s));
 
-  imgs.forEach(img => {
-    const title = titleFrom(img.getAttribute('src'));
-    img.dataset.title = title;
-    img.dataset.cat = categoryOf(title);
-    img.alt = title + ' (writing sample)';
-    img.loading = 'lazy';
-  });
-
-  const cats = ['All', ...new Set(imgs.map(i => i.dataset.cat))];
-  cats.forEach((cat, i) => {
-    const b = document.createElement('button');
-    b.textContent = cat;
-    if (i === 0) b.classList.add('active');
-    b.addEventListener('click', () => {
-      filtersEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      imgs.forEach(img => img.classList.toggle('hidden', cat !== 'All' && img.dataset.cat !== cat));
-    });
-    filtersEl.appendChild(b);
+  Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length).forEach(genre => {
+    const items = groups[genre];
+    const cover = items.find(s => s[0] === COVERS[genre]) || items[0];
+    const label = LABELS[genre] || genre;
+    const card = document.createElement('button');
+    card.className = 'card';
+    card.innerHTML = '<img loading="lazy" alt="" src="' + src(cover[4]) + '">' +
+      '<span class="card-body"><span class="card-title">' + label + '</span>' +
+      '<span class="card-count">' + items.length + (items.length === 1 ? ' synopsis' : ' synopses') + '</span></span>';
+    card.addEventListener('click', () => { group = items; lb.classList.add('open'); show(0); });
+    cardsEl.appendChild(card);
   });
 
   function show(i){
-    current = (i + visible.length) % visible.length;
-    const img = visible[current];
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
-    lbCaption.innerHTML = img.dataset.title + '<small>' + img.dataset.cat + ' &middot; ' + (current + 1) + ' of ' + visible.length + '</small>';
-  }
-  function open(img){
-    visible = imgs.filter(i => !i.classList.contains('hidden'));
-    lb.classList.add('open');
-    show(visible.indexOf(img));
+    current = (i + group.length) % group.length;
+    const [title, genre, type, country, file] = group[current];
+    lbImg.src = src(file);
+    lbImg.alt = title + ' synopsis';
+    lbCaption.innerHTML = title + '<small>' + (LABELS[genre] || genre) + ' &middot; ' + type + ' &middot; ' + country + '</small>';
   }
   function close(){ lb.classList.remove('open'); }
 
-  imgs.forEach(img => img.addEventListener('click', () => open(img)));
   document.getElementById('lbClose').addEventListener('click', close);
   document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
   document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
